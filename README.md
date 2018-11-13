@@ -17,8 +17,8 @@ TODO
 ====
 
 - [ ] Configure threads for:
-  - [ ] - Puma
-  - [ ] - Talkdesk Events Consumers
+  - [ ] Puma
+  - [ ] Talkdesk Events Consumers
 
 - [ ] Track ongoing calls in legacy, and NC
   - [X] Track start of calls
@@ -28,13 +28,13 @@ TODO
 
 - [ ] Look into using Sequel (https://github.com/jeremyevans/sequel) instead of the `pg` gem
   - [ ] Write bootstrap scripts:
-   - [ ] Create db and tables
-   - [ ] Add fixtures (useful later for tests)
-   - [ ] Destroy db and tables (DEV only)
+    - [ ] Create db and tables
+    - [ ] Add fixtures (useful later for tests)
+    - [ ] Destroy db and tables (DEV only)
 
 - [ ] Ensure we can cleanup after ourselves:
- - [ ] Script to unbind our RabbitMQ queue in DEV environments
+  - [ ] Script to unbind our RabbitMQ queue in DEV environments
 
 - [ ] Finish writting the readme file
-    - [ ] Explain dev setup
-    - [ ] Deployment procedure (including fresh)
+  - [ ] Explain dev setup
+  - [ ] Deployment procedure (including fresh)
