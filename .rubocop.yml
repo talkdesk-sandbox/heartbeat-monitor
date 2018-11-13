@@ -1,0 +1,3 @@
+inherit_gem:
+  ruby_style:
+    - default.yml

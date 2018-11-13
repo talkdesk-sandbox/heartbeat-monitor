@@ -1,0 +1,3 @@
+#! /bin/bash
+
+bundler exec ruby lib/consumers/routing_consumer.rb
