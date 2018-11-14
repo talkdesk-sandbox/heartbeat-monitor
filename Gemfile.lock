@@ -59,6 +59,7 @@ GEM
     rubocop-rspec (1.27.0)
       rubocop (>= 0.56.0)
     ruby-progressbar (1.10.0)
+    sequel (5.14.0)
     sinatra (2.0.4)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -76,6 +77,7 @@ DEPENDENCIES
   pry
   puma (= 3.12.0)
   ruby_style (= 0.4.0)!
+  sequel (= 5.14.0)
   sinatra (= 2.0.4)
   talkdesk_events (= 4.1.2)!
 

@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# Deprecated in favor of using sequel
+
 require 'pg'
 
 class Postgres

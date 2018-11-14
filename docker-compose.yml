@@ -11,7 +11,7 @@ services:
     environment:
       - ROUTING_EVENTS_AMQP_URL=amqp://td-qa:aisiuPangohye6wae3EeP5euw0phu1ahlohwahziph5aepeiph@qa-rabbitmq.talkdeskdev.com:5672/talkdesk-qa
       - TALKDESK_EVENTS_AMQP_URL=amqp://td-qa:aisiuPangohye6wae3EeP5euw0phu1ahlohwahziph5aepeiph@qa-rabbitmq.talkdeskdev.com:5672/talkdesk-qa
-      - POSTGRES_URL=postgresql://postgres@postgres:5432/postgres
+      - POSTGRES_URL=postgresql://xonecas@postgres:5432/heartbeat
 
   heartbeat:
     extends: base

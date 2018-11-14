@@ -34,6 +34,7 @@ TODO
 
 - [ ] Ensure we can cleanup after ourselves:
   - [ ] Script to unbind our RabbitMQ queue in DEV environments
+  - [ ] Use bunny gem to achieve operational scripts
 
 - [ ] Finish writting the readme file
   - [ ] Explain dev setup
