@@ -8,10 +8,8 @@ services:
       dockerfile: Dockerfile
       args:
         BUNDLE_GITHUB__COM: ${BUNDLE_GITHUB__COM}
-    environment:
-      - ROUTING_EVENTS_AMQP_URL=amqp://td-qa:aisiuPangohye6wae3EeP5euw0phu1ahlohwahziph5aepeiph@qa-rabbitmq.talkdeskdev.com:5672/talkdesk-qa
-      - TALKDESK_EVENTS_AMQP_URL=amqp://td-qa:aisiuPangohye6wae3EeP5euw0phu1ahlohwahziph5aepeiph@qa-rabbitmq.talkdeskdev.com:5672/talkdesk-qa
-      - POSTGRES_URL=postgresql://xonecas@postgres:5432/heartbeat
+    env_file:
+      - .env
 
   heartbeat:
     extends: base
