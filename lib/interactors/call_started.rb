@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require 'logger'
+
 def call_started(event)
-  puts "Call started at #{event['timestamp']}"
+  logger = Logger.new($stdout)
+  logger.info("Call or flow started: #{event}")
 end

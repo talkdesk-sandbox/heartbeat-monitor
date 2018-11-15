@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'talkdesk_events'
-require_relative '../processors/event_processor.rb'
 
 def generic_consumer(config)
   processors = config[:processors]
@@ -9,13 +8,13 @@ def generic_consumer(config)
 
   consumer = TalkdeskEvents::Consumer::EventConsumer.new(
     amqp_url: config[:amqp_url],
-    block: true, # doesn't block the calling thread. default is true
+    block: true,
     event_dispatcher: event_dispatcher,
-    exchange: config[:exchange], # default is 'talkdesk.events'
-    priority: 10, # Consumer Priority, default is 0
+    exchange: config[:exchange],
+    priority: 1,
     queue: config[:queue],
     routing_keys: config[:routing_keys],
-    threads: 1, # default is 1
+    threads: 1,
   )
 
   consumer
