@@ -3,14 +3,14 @@
 require 'logger'
 require_relative '../repositories/calls.rb'
 
-def call_started(event)
+def call_finished(event)
   logger = Logger.new($stdout)
-  logger.info("Call or flow started: #{event}")
+  logger.info("Call finished: #{event}")
 
   calls = Calls.new
   calls.insert_with_transaction(
     event['interaction_id'],
     event['call_id'],
-    Calls::STARTED,
+    Calls::FINISHED,
   )
 end

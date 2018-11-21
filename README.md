@@ -19,15 +19,20 @@
 
   2) Ensure your github token is exposed under the env var: `BUNDLE_GITHUB__COM`
 
+    - Please ensure you follow the example env file: `example.env`  Rename it to `.env` and edit in your values.
+
   3) Use docker-compose to build and run the required containers:
 
     `docker-compose build && docker-compose up -d heartbeat talkdesk_consumer routing_consumer`
 
   3a) FIRST RUN ONLY:
 
-    * Use `docker ps` to get the container id for `heartbeat_1`
-    * Open a bash prompt inside the container: `docker exec -ti CONTAINER_ID bash` (replace Container Id with the hash you got from `docker ps`)
-    * In this new prompt, run `bin/db/create_tables`
+    - Use `docker ps` to get the container id for `heartbeat_1`
+
+    - Open a bash prompt inside the container: `docker exec -ti CONTAINER_ID bash` (replace Container Id with the hash you got from `docker ps`)
+
+    - In this new prompt, run `bin/db/create_tables`
+
 
   4) To see the logs from all the containers you can use: `docker-compose logs -ft --tail=0`
 
@@ -55,5 +60,5 @@
   - [ ] Use bunny gem to achieve operational scripts
 
 - [ ] Finish writting the readme file
-  - [ ] Explain dev setup
+  - [X] Explain dev setup
   - [ ] Deployment procedure (including fresh)
