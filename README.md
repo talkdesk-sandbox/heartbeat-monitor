@@ -25,15 +25,6 @@
 
     `docker-compose build && docker-compose up -d heartbeat talkdesk_consumer routing_consumer`
 
-  3a) FIRST RUN ONLY:
-
-    - Use `docker ps` to get the container id for `heartbeat_1`
-
-    - Open a bash prompt inside the container: `docker exec -ti CONTAINER_ID bash` (replace Container Id with the hash you got from `docker ps`)
-
-    - In this new prompt, run `bin/db/create_tables`
-
-
   4) To see the logs from all the containers you can use: `docker-compose logs -ft --tail=0`
 
   Note: If you want to repeat the process, run `bin/db/bobby_drop_tables` inside the `heartbeat_1` container before starting again from step 3.
