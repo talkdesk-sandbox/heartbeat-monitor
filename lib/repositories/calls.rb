@@ -58,4 +58,12 @@ class Calls
       )
     end
   end
+
+  # usage similat to Sequel's `where`
+  #   `calls.count_calls_where(state: Calls::STARTED)`
+  # or
+  #   `calls.count_calls_where { created_at > CURRENT_DATE }``
+  def count_calls_where(*args, &block)
+    @db[:calls].where(*args, &block).count
+  end
 end
