@@ -8,7 +8,7 @@ def call_started(event)
   logger.info("Call or flow started: #{event}")
 
   calls = Calls.new
-  calls.insert_with_transaction(
+  calls.insert_or_update(
     event['interaction_id'],
     event['call_id'],
     Calls::STARTED,

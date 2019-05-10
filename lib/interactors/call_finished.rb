@@ -8,7 +8,7 @@ def call_finished(event)
   logger.info("Call finished: #{event}")
 
   calls = Calls.new
-  calls.insert_with_transaction(
+  calls.insert_or_update(
     event['interaction_id'],
     event['call_id'],
     Calls::FINISHED,
