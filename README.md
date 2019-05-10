@@ -54,6 +54,8 @@ _DOCKER: `docker-compose run heartbeat ruby bin/tasks/delete_old_calls.rb DAYS`_
   - [ ] Track end of calls
   - [ ] Enforce a 7 day TTL on Postgress table
   - [ ] Create a long-lasting db schema (try a few iterations)
+  - [ ] Track outbound calls (listen to `outgoing_call_initiated` event)
+  - [ ] Track agent-to-agent calls (`agent_call_initiated` event)
 
 - [ ] Write bootstrap scripts:
   - [X] Create tables
