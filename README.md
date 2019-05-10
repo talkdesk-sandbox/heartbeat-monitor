@@ -29,6 +29,20 @@
 
   Note: If you want to repeat the process, run `bin/db/bobby_drop_tables` inside the `heartbeat_1` container before starting again from step 3.
 
+# Deleting older entries
+
+The script `bin/tasks/delete_old_calls.rb` was created to delete old entries. The main purpose is associate it with a
+cron-job or any other kind of scheduler. This is needed because Postgres does not support TTL natively.
+
+To run it:
+```
+    ruby bin/tasks/delete_old_calls.rb DAYS
+```
+It will delete all entries older than the given `DAYS`
+
+_NOTE: The scripts needs the `POSTGRES_URL` environment variable. You might prefer to run it in your (development) containers or in your deployment environment._  
+_DOCKER: `docker-compose run heartbeat ruby bin/tasks/delete_old_calls.rb DAYS`_  
+
 # TODO
 
 - [X] Configure threads for:
@@ -49,6 +63,7 @@
 - [ ] Ensure we can cleanup after ourselves:
   - [ ] Script to unbind our RabbitMQ queue in DEV environments
   - [ ] Use bunny gem to achieve operational scripts
+  - [ ] Implement authenticated HTTP API for deleting older calls
 
 - [ ] Finish writting the readme file
   - [X] Explain dev setup
