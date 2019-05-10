@@ -12,9 +12,9 @@ class Calls
   # @TODO: Sequel recomends one instance per application,
   # I need to sort out how to manage that in Ruby (pass it to the initializer?)
   # Left as TODO since at the moment it's the only instance, but that will change.
-  def initialize
-    @db = Sequel.connect(ENV['POSTGRES_URL'])
-    @db.loggers << Logger.new($stdout)
+  def initialize(db)
+    raise ArgumentError, 'Argument `db` cannot be nil' if !db?
+    @db = db
   end
 
   def create_schema
