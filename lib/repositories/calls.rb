@@ -50,7 +50,7 @@ class Calls
     end
   end
 
-  def update_with_transaction(interaction_id, twilio_id, state)
+  def update_with_transaction(table, interaction_id, twilio_id, state)
     @db.transaction do
       table.where(interaction_id: interaction_id).update(
         twilio_id: twilio_id,
