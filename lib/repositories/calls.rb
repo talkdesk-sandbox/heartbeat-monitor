@@ -58,4 +58,10 @@ class Calls
       )
     end
   end
+
+  def delete_old_calls(days:)
+    @db.transaction do
+      @db[:calls].where { created_at < DateTime.now - days }.delete
+    end
+  end
 end
